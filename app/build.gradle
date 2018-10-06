@@ -1,11 +1,27 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.build-properties'
 apply plugin: 'kotlin-kapt'
 
 buildscript {
     repositories {
         jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:gradle-build-properties-plugin:0.4.1'
+    }
+}
+
+buildProperties {
+    dev {
+        using rootProject.file('resources/environments/dev.properties')
+    }
+    prod {
+        (using(rootProject.file('resources/environments/production.properties')) | dev)
+    }
+    local {
+        using rootProject.file('local.properties')
     }
 }
 
@@ -13,7 +29,7 @@ android {
     compileSdkVersion versions.androidSdk.compile
 
     defaultConfig {
-        applicationId "io.kotlin.kotlinclean"
+        applicationId "io.kotlin.ecommstarter"
         minSdkVersion versions.androidSdk.min
         targetSdkVersion versions.androidSdk.target
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,6 +39,28 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'environment'
+
+    productFlavors.all { flavor ->
+        flavor.ext.from = { flavorProperties ->
+            logger.debug ">>> Configuring '${flavor.name}' flavor using '${flavorProperties.name}' build properties"
+            dimension 'environment'
+            flavor.applicationId flavorProperties['applicationId'].string
+            flavor.versionCode = flavorProperties['versionCode'].int
+            flavor.versionName flavorProperties['versionName'].string
+            flavor.buildConfigString 'BASE_URL', (buildProperties.local['baseUrl'] | flavorProperties['baseUrl'])
+        }
+    }
+
+    productFlavors {
+        dev {
+            from buildProperties.dev
+        }
+        production {
+            from buildProperties.prod
         }
     }
 }
