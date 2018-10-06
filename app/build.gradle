@@ -1,19 +1,24 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion versions.androidSdk.compile
+
     defaultConfig {
-        applicationId "io.kotlin.ecommstarter"
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId "io.kotlin.kotlinclean"
+        minSdkVersion versions.androidSdk.min
+        targetSdkVersion versions.androidSdk.target
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,11 +28,26 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    kapt libraries.app.dagger.processor
+    kapt libraries.app.dagger.android.processor
+    kapt libraries.app.glideProcessor
+    implementation libraries.support.appcompat
+    implementation libraries.support.v4
+    implementation libraries.support.recyclerview
+
+    implementation libraries.app.dagger.runtime
+    implementation libraries.app.dagger.android.runtime
+    implementation libraries.app.dagger.android.support
+    implementation libraries.app.rxAndroid
+
+    implementation libraries.app.glide
+
+    testImplementation libraries.test.junit
+    testImplementation libraries.test.truth
+    testImplementation libraries.test.mockito
+    testImplementation libraries.test.robolectric.core
+    testImplementation libraries.test.robolectric.multidex
+}
+repositories {
+    mavenCentral()
 }
