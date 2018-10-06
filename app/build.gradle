@@ -66,6 +66,8 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
+
     kapt libraries.app.dagger.processor
     kapt libraries.app.dagger.android.processor
     kapt libraries.app.glideProcessor
