@@ -2,6 +2,8 @@ package io.kotlin.ecommstarter.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import java.util.concurrent.TimeUnit
 
 class NetworkDefaults {
@@ -11,6 +13,14 @@ class NetworkDefaults {
 
         fun okHttpClient(): OkHttpClient {
             return OkHttpClientHolder.INSTANCE.okHttpClient
+        }
+
+        fun retrofit(): Retrofit {
+            return Retrofit.Builder()
+                    .baseUrl("http://invalid.url")
+                    .client(okHttpClient())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build()
         }
     }
 
