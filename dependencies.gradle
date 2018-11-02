@@ -25,7 +25,7 @@ ext {
             glide              : '4.8.0'
     ]
     gradlePlugins = [
-            androidBuild  : 'com.android.tools.build:gradle:3.1.4',
+            androidBuild  : 'com.android.tools.build:gradle:3.2.0',
             kotlin        : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
             staticAnalysis: 'com.novoda:gradle-static-analysis-plugin:0.4.1',
             javaApt       : 'net.ltgt.gradle:gradle-apt-plugin:0.9',
