@@ -12,11 +12,10 @@ import retrofit2.Retrofit
 import java.io.File
 import javax.inject.Singleton
 
-private const val DEFAULT_DISK_CACHE_SIZE = 16 * 1024 * 1024 // 16MB
-
-@Singleton
 @Module
 class NetworkModule(application: Application) {
+
+    private val DEFAULT_DISK_CACHE_SIZE = 16 * 1024 * 1024 // 16MB
 
     private val defaultCache = Cache(createCache(application, "default_cache"), DEFAULT_DISK_CACHE_SIZE.toLong())
 
