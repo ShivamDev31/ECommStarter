@@ -29,7 +29,7 @@ compileTestKotlin {
 
 dependencies {
     api libraries.app.kotlin
-    implementation libraries.app.rxJava
+    api libraries.app.rxJava
     implementation libraries.app.javaxInject
     implementation libraries.app.okHttp
     api libraries.app.okHttpLogging
