@@ -63,7 +63,8 @@ ext {
                             gcm: "com.google.android.gms:play-services-gcm:${versions.playService}"
                     ],
                     glide          : "com.github.bumptech.glide:glide:${versions.glide}",
-                    glideProcessor : "com.github.bumptech.glide:compiler:${versions.glide}"
+                    glideProcessor : "com.github.bumptech.glide:compiler:${versions.glide}",
+                    timber         : "com.jakewharton.timber:timber:4.7.1"
             ],
 
             test    : [
