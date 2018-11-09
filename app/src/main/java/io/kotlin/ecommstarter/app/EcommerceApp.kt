@@ -11,7 +11,7 @@ import timber.log.Timber
 import timber.log.Timber.DebugTree
 
 
-class EcommApp : InjectableApp(ApplicationAndroidFactory()) {
+class EcommerceApp : InjectableApp(ApplicationAndroidFactory()) {
 
     class ApplicationAndroidFactory : ApplicationInjector.Factory {
         override fun create(application: Application): ApplicationInjector {
