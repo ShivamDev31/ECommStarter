@@ -12,4 +12,18 @@ class EcommApp : InjectableApp(ApplicationAndroidFactory()) {
                     .build()
         }
     }
+
+    override fun onCreate() {
+        super.onCreate()
+        setupTimber()
+    }
+
+    private fun setupTimber() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(DebugTree())
+        } else {
+            // We can handle crashlytics tree here which will be used for production
+            //Timber.plant(CrashReportingTree())
+        }
+    }
 }
