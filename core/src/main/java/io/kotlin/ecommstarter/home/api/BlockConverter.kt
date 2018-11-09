@@ -3,7 +3,7 @@ package io.kotlin.ecommstarter.home.api
 import io.kotlin.ecommstarter.home.Ad
 import io.kotlin.ecommstarter.home.AdBlock
 import io.kotlin.ecommstarter.home.Block
-import io.kotlin.ecommstarter.home.EcommerceBlock
+import io.kotlin.ecommstarter.home.HomeBlock
 import io.kotlin.ecommstarter.home.GridProductBlock
 import io.kotlin.ecommstarter.home.ListProductBlock
 import io.kotlin.ecommstarter.home.Product
@@ -11,14 +11,14 @@ import io.kotlin.ecommstarter.home.SliderProductBlock
 import io.kotlin.ecommstarter.rx.Converter
 import javax.activation.UnsupportedDataTypeException
 
-class BlockConverter : Converter<ApiEcommerceBlock?, EcommerceBlock>, ApiBlock.Visitor {
-    override fun apply(apiEcommerceBlock: ApiEcommerceBlock): EcommerceBlock {
+class BlockConverter : Converter<ApiHomeBlock?, HomeBlock>, ApiBlock.Visitor {
+    override fun apply(apiHomeBlock: ApiHomeBlock): HomeBlock {
         val blocks = mutableListOf<Block>()
-        apiEcommerceBlock.blocks.forEach {
+        apiHomeBlock.blocks.forEach {
             val block = it.accept(this)
             blocks.add(block)
         }
-        return EcommerceBlock(blocks)
+        return HomeBlock(blocks)
     }
 
     override fun visit(apiProductBlock: ApiProductBlock): Block {
