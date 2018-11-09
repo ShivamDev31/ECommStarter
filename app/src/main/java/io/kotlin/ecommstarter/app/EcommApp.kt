@@ -1,14 +1,23 @@
 package io.kotlin.ecommstarter.app
 
 import android.app.Application
+import android.util.Log
+import io.kotlin.ecommstarter.BuildConfig
 import io.kotlin.ecommstarter.di.ApplicationInjector
 import io.kotlin.ecommstarter.di.DaggerApplicationInjector
+import io.kotlin.ecommstarter.network.JsonModule
+import io.kotlin.ecommstarter.network.NetworkModule
+import timber.log.Timber
+import timber.log.Timber.DebugTree
+
 
 class EcommApp : InjectableApp(ApplicationAndroidFactory()) {
 
     class ApplicationAndroidFactory : ApplicationInjector.Factory {
         override fun create(application: Application): ApplicationInjector {
             return DaggerApplicationInjector.builder()
+                    .networkModule(NetworkModule(application))
+                    .jsonModule(JsonModule())
                     .build()
         }
     }
