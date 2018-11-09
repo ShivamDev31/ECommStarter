@@ -1,10 +1,10 @@
-package io.kotlin.ecommstarter.feed
+package io.kotlin.ecommstarter.home
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import io.kotlin.ecommstarter.R
 
-class FeedActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -37,6 +37,7 @@ dependencies {
     implementation libraries.app.retrofit.rxJavaAdapter
     implementation libraries.app.retrofit.moshiConverter
     api libraries.app.moshi
+    api libraries.app.moshiKotlin
 
     testImplementation libraries.test.truth
     testImplementation libraries.test.junit

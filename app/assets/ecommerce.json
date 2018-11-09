@@ -1,0 +1,207 @@
+{
+  "blocks": [
+    {
+      "type": "product_slider",
+      "items": [
+        {
+          "id": "111",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81o%2B471pKpL._UL1500_.jpg",
+          "name": "Puma Men's Running Shoes",
+          "price": 1554.5
+        },
+        {
+          "id": "112",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/615imFPjyAL._SL1100_.jpg",
+          "name": "All-new Echo Dot (3rd Gen)",
+          "price": 3144.5
+        },
+        {
+          "id": "113",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91chCdU3x8L._SL1500_.jpg",
+          "name": "KENT Grand 8-Litres Wall-Mountable RO + UV/UF + TDS Water Purifier",
+          "price": 25643
+        },
+        {
+          "id": "114",
+          "image_url": "https://images-eu.ssl-images-amazon.com/images/I/413Ge3dy3qL.jpg",
+          "name": "The Girl in Room 105",
+          "price": 155
+        },
+        {
+          "id": "115",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/71mbC-uhIRL._SL1350_.jpg",
+          "name": "F Gear Luxur Brown 25 liter Laptop Backpack",
+          "price": 4535
+        }
+      ]
+    },
+    {
+      "type": "ad",
+      "id": "ad_1",
+      "ad_image_url": "https://www.amazon.in/Apple-Watch-Smart-Silver-Aluminum/dp/B075R9565R",
+      "ad_url": "URL",
+      "show": true
+    },
+    {
+      "type": "product_list",
+      "items": [
+        {
+          "id": "211",
+          "name": "Carlton London Mr.CL Casuals For Men  (Navy)",
+          "price": 1332.5,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/ji20r680/shoe/m/q/h/kcl003-7-carlton-london-mr-cl-navy-original-imaf5xz7fqufsday.jpeg"
+        },
+        {
+          "id": "212",
+          "name": "Lois Caron LCS-8075 BLUE DIAL DAY & DATE FUNCTIONING",
+          "price": 11123.5,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jlcmavk0/watch/g/y/r/lcs-8075-lois-caron-original-imaf8hy265hwft5k.jpeg"
+        },
+        {
+          "id": "213",
+          "name": "Metronaut Printed Men's Round Neck Grey T-Shirt",
+          "price": 263.5,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jjlqxe80/t-shirt/5/f/6/m-mss18cn082b-metronaut-original-imaf757qjm27vwns.jpeg"
+        },
+        {
+          "id": "214",
+          "name": "Google Chromecast 3 Media Streaming Device  (Black)",
+          "price": 3645,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jmwch3k0-1/selector-box/j/t/c/google-chromecast3blk-original-imaf9pjxgdhff9jp.jpeg"
+        },
+        {
+          "id": "215",
+          "name": "Emotix Miko - Companion Robot  (Playful Purple)",
+          "price": 19999,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jf2uqa80/smart-assistant/j/j/q/miko-companion-robot-mmc2226-emotix-original-imaf3mpnfhfgqpew.jpeg"
+        },
+        {
+          "id": "216",
+          "name": "Cp Plus Home Security Camera  (1 ,2 ,4 TB, 4 Channel)",
+          "price": 700,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jmkwya80/home-security-camera/q/d/g/cp-gtc-d24l2-v3-cp-plus-original-imaf9gn8t7kgmkhz.jpeg"
+        },
+        {
+          "id": "217",
+          "name": "Nokia 5.1 Plus (Black, 32 GB)  (3 GB RAM)",
+          "price": 10999,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jmp79u80/mobile/g/x/r/nokia-5-1-plus-ta-1102-ds-original-imaf9jzhhmfm78d9.jpeg"
+        },
+        {
+          "id": "218",
+          "name": "Redmi Note 5 Pro (Blue, 64 GB)  (4 GB RAM)",
+          "price": 14999,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jgy0fbk0/mobile/q/m/c/mi-redmi-note-5-pro-mzb6081in-mzb6089in-original-imaf52hhf3yy5bg8.jpeg"
+        },
+        {
+          "id": "219",
+          "name": "Skmei 1155BLUE Outdoor Sports Dual Time Watch - For Men",
+          "price": 465,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jms25jk0/watch/c/w/r/1155blue-outdoor-sports-dual-time-skmei-original-imaf9m2fzz3tnpdk.jpeg"
+        },
+        {
+          "id": "220",
+          "name": "Hidelink Men Formal Brown Genuine Leather Wallet  (9 Card Slots)",
+          "price": 999,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/wallet-card-wallet/6/b/8/14023-hidelink-wallet-men-women-original-imae9hhmhsfc9djt.jpeg"
+        },
+        {
+          "id": "221",
+          "name": "Vogue Full Rim Rectangle Frame  (51 mm)",
+          "price": 3519,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/j7qi9ow0/frame/m/k/k/51-0vo5030246951-vogue-original-imaexh3v8cms9kuv.jpeg"
+        },
+        {
+          "id": "222",
+          "name": "Mi City 16 L Laptop Backpack  (Grey)",
+          "price": 1599,
+          "image_url": "https://rukminim1.flixcart.com/image/832/832/jhgl5e80/backpack/j/b/2/city-3181200026-laptop-backpack-mi-original-imaf5hcfevbd9qy7.jpeg"
+        }
+      ]
+    },
+    {
+      "type": "ad",
+      "id": "ad_2",
+      "ad_image_url": "https://bloximages.newyork1.vip.townnews.com/insideradio.com/content/tncms/assets/v3/editorial/4/50/45001676-33c1-11e7-8ed7-276f37ba7bd8/5910206f5cedc.image.jpg",
+      "ad_url": "https://www.amazon.in/dp/B07DJD1Y3Q",
+      "show": true
+    },
+    {
+      "type": "product_grid",
+      "items": [
+        {
+          "id": "311",
+          "name": "Butterfly Smart 750-Watt Mixer Grinder with 4 Jar (Grey",
+          "price": 3399,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/71pKBILY31L._SL1500_.jpg"
+        },
+        {
+          "id": "312",
+          "name": "Samsung Galaxy On7 Prime (Black, 4GB RAM, 64GB Storage)",
+          "price": 10999,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/61EM4uS-5iL._SL1200_.jpg"
+        },
+        {
+          "id": "313",
+          "name": "Lenovo Ideapad 330 Intel Core i5 8th Gen 15.6-inch Laptop (8GB/2TB HDD/DOS/2GB Graphics/Platinum Grey/ 2.2kg), 81DE01JWIN",
+          "price": 42000,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/61PGMP8d5PL._SL1125_.jpg"
+        },
+        {
+          "id": "314",
+          "name": "Adidas Men's Running Shoes",
+          "price": 2900,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/71KJcWiVOTL._UL1500_.jpg"
+        },
+        {
+          "id": "315",
+          "name": "BPL 564 L Frost Free Side-by-Side Refrigerator(BRS564H, Silver)",
+          "price": 39990,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81Gpw6B%2BuAL._SL1500_.jpg"
+        },
+        {
+          "id": "316",
+          "name": "Micromax 81 cm (32 inches) HD Ready LED TV 32T8361HD/32T8352D (Black)",
+          "price": 10490,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81nOnPNar1L._SL1500_.jpg"
+        },
+        {
+          "id": "317",
+          "name": "IFB 6 kg Fully-Automatic Front Loading Washing Machine (Diva Aqua SX, Silver)",
+          "price": 19990,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/816KTb0t1HL._SL1500_.jpg"
+        },
+        {
+          "id": "318",
+          "name": "Negi 3x3x3 Speed Cube",
+          "price": 100,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/41L8Ag%2BfIZL.jpg"
+        },
+        {
+          "id": "319",
+          "name": "Mattel Uno Playing Card Game",
+          "price": 89,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91D-zq7R8NL._SL1500_.jpg"
+        },
+        {
+          "id": "320",
+          "name": "Maggi 2 Minutes Noodles Masala, 420g0",
+          "price": 90,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81K%2BBJ6FUuL._SL1500_.jpg"
+        },
+        {
+          "id": "321",
+          "name": "Mcp Digital Kitchen Scale Electronic Digital Kitchen Weighing Scale 10 Kgs Weight Measure Spices Vegetable Liquids, Ivory",
+          "price": 288,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/513QazCuMWL._SL1000_.jpg"
+        },
+        {
+          "id": "322",
+          "name": "ASIAN Shoes Wonder-13 Grey Firozi Mesh Kids Shoes",
+          "price": 699.5,
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/61cbAQatNlL._UL1024_.jpg"
+        }
+      ]
+    }
+  ]
+}
