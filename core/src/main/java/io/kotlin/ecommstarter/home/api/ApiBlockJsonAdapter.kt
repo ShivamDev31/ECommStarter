@@ -17,7 +17,7 @@ class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
     }
 
     override fun fromJson(reader: JsonReader): ApiBlock? {
-        val data = reader.readJsonValue() as Map<String, Object>
+        val data = reader.readJsonValue() as Map<String, Any>
         val type = data["type"] as String
         return when (type) {
             "ad" -> readAdFrom(data)
@@ -25,21 +25,16 @@ class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
         }
     }
 
-    private fun readAdFrom(data: Map<String, Object>): ApiAdBlock {
+    private fun readAdFrom(data: Map<String, Any>): ApiAdBlock {
         val id: String = data["id"] as String
-        val adImageUrl: String = data["ad_image_url"] as String
-        val adUrl: String = data["ad_url"] as String
+        val adImageUrl: String = data["adImageUrl"] as String
+        val adUrl: String = data["adUrl"] as String
         val shouldShow: Boolean = data["show"] as Boolean
         val type: String = data["type"] as String
         return ApiAdBlock(id, adImageUrl, adUrl, shouldShow, type)
     }
 
-    private fun readProductFrom(type: String, data: Map<String, Object>): ApiProductBlock {
-//        val id: String = data["id"] as String
-//        val name: String = data["name"] as String
-//        val price: Double = data["price"] as Double
-//        val imageUrl: String = data["image_url"] as String
-//        val type: String = data["type"] as String
+    private fun readProductFrom(type: String, data: Map<String, Any>): ApiProductBlock {
         val items : List<ApiProducts>? = apiItemsAdapter.fromJsonValue(data["items"])
         return ApiProductBlock(type, items)
     }

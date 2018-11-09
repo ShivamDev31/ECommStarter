@@ -13,7 +13,7 @@ class EcommerceApiFetcher(private val blockConverter: BlockConverter, private va
             val blockConverter = BlockConverter()
 
             val localMoshi = moshi.newBuilder()
-                    .add(ApiBlockJsonAdapter(moshi))
+                    .add(ApiBlock::class.java, ApiBlockJsonAdapter(moshi))
                     .build()
 
             val ecommerceBackend = retrofit

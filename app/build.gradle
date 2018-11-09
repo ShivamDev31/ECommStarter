@@ -82,6 +82,8 @@ dependencies {
 
     implementation libraries.app.glide
 
+    implementation libraries.app.timber
+
     testImplementation libraries.test.junit
     testImplementation libraries.test.truth
     testImplementation libraries.test.mockito
