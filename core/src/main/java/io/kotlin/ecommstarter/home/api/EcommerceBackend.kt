@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface EcommerceBackend {
 
     //@GET("bins/1e802m")
-    @GET("bins/10pp4m")
+    @GET("bins/1h6uiu")
     fun load(): Single<ApiEcommerceBlock>
 }
