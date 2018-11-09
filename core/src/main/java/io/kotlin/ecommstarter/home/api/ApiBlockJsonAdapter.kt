@@ -6,6 +6,11 @@ import com.squareup.moshi.JsonWriter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 
+private const val AD_TYPE = "ad"
+private const val SLIDER_PRODUCTS_TYPE = "slider_products"
+private const val LIST_PRODUCTS_TYPE = "list_products"
+private const val GRID_PRODUCTS_TYPE = "grid_products"
+
 class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
 
     private val apiItemsAdapter = moshi.adapter<List<ApiProducts>>(Types.newParameterizedType(List::class.java, ApiProducts::class.java))
@@ -20,8 +25,9 @@ class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
         val data = reader.readJsonValue() as Map<String, Any>
         val type = data["type"] as String
         return when (type) {
-            "ad" -> readAdFrom(data)
-            else -> readProductFrom(type, data)
+            AD_TYPE -> readAdFrom(data)
+            SLIDER_PRODUCTS_TYPE, LIST_PRODUCTS_TYPE, GRID_PRODUCTS_TYPE -> readProductFrom(type, data)
+            else -> ApiBlock.EMPTY
         }
     }
 
@@ -35,7 +41,7 @@ class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
     }
 
     private fun readProductFrom(type: String, data: Map<String, Any>): ApiProductBlock {
-        val items : List<ApiProducts>? = apiItemsAdapter.fromJsonValue(data["items"])
+        val items: List<ApiProducts>? = apiItemsAdapter.fromJsonValue(data["items"])
         return ApiProductBlock(type, items)
     }
 
