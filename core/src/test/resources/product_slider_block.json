@@ -1,0 +1,11 @@
+{
+  "type": "product_slider",
+  "items": [
+    {
+      "id": "111",
+      "imageUrl": "https://product.link",
+      "name": "Puma Men's Running Shoes",
+      "price": 1554.5
+    }
+  ]
+}
