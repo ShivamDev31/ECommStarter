@@ -11,6 +11,6 @@ interface Block {
 
         fun visit(product: Product)
 
-        fun visit(ad: Ad)
+        fun visit(adBlock: AdBlock)
     }
 }

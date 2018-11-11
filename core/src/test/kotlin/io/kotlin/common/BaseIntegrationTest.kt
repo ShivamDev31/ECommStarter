@@ -14,7 +14,6 @@ open class BaseIntegrationTest {
             .newBuilder()
             .baseUrl(URL)
             .build()
-    val ASSET_LOADER = TestAssetLoader()
 
 //    private fun baseUrl(): String {
 //        val properties = Properties()
