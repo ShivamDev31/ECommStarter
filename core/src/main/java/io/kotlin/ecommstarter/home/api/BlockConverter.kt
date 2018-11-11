@@ -1,10 +1,9 @@
 package io.kotlin.ecommstarter.home.api
 
-import io.kotlin.ecommstarter.home.Ad
 import io.kotlin.ecommstarter.home.AdBlock
 import io.kotlin.ecommstarter.home.Block
-import io.kotlin.ecommstarter.home.HomeBlock
 import io.kotlin.ecommstarter.home.GridProductBlock
+import io.kotlin.ecommstarter.home.HomeBlock
 import io.kotlin.ecommstarter.home.ListProductBlock
 import io.kotlin.ecommstarter.home.Product
 import io.kotlin.ecommstarter.home.SliderProductBlock
@@ -36,7 +35,6 @@ class BlockConverter : Converter<ApiHomeBlock?, HomeBlock>, ApiBlock.Visitor {
     }
 
     override fun visit(apiAdBlock: ApiAdBlock): Block {
-        val ad = Ad(apiAdBlock.id, apiAdBlock.adImageUrl, apiAdBlock.adUrl, apiAdBlock.shouldShow, apiAdBlock.type)
-        return AdBlock(ad)
+        return AdBlock(apiAdBlock.id, apiAdBlock.adImageUrl, apiAdBlock.adUrl, apiAdBlock.shouldShow, apiAdBlock.type)
     }
 }
