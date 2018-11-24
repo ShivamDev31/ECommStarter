@@ -2,7 +2,7 @@ package io.kotlin.ecommstarter.imageloader
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.support.annotation.DrawableRes
+import androidx.annotation.DrawableRes
 import android.widget.ImageView
 import com.bumptech.glide.load.engine.GlideException
 import okhttp3.HttpUrl

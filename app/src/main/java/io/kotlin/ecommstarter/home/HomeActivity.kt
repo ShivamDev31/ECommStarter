@@ -1,7 +1,7 @@
 package io.kotlin.ecommstarter.home
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import io.kotlin.ecommstarter.R
 import javax.inject.Inject
