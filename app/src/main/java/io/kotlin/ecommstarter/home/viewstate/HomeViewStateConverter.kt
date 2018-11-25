@@ -21,21 +21,27 @@ class HomeViewStateConverter : Converter<HomeBlock, EcommerceHomeViewState>, Blo
     }
 
     override fun visit(sliderProduct: SliderProductBlock) {
-        val product = sliderProduct.product
-        val viewState = ProductSliderViewState(product.id, product.name, product.price, product.imageUrl)
-        viewStates.add(viewState)
+        val products = sliderProduct.products
+        products.forEach {
+            val viewState = ProductSliderViewState(it.id, it.name, it.price, it.imageUrl)
+            viewStates.add(viewState)
+        }
     }
 
     override fun visit(listProduct: ListProductBlock) {
-        val product = listProduct.product
-        val viewState = ProductListViewState(product.id, product.name, product.price, product.imageUrl)
-        viewStates.add(viewState)
+        val products = listProduct.products
+        products.forEach {
+            val viewState = ProductListViewState(it.id, it.name, it.price, it.imageUrl)
+            viewStates.add(viewState)
+        }
     }
 
     override fun visit(gridProduct: GridProductBlock) {
-        val product = gridProduct.product
-        val viewState = GridProductViewState(product.id, product.name, product.price, product.imageUrl)
-        viewStates.add(viewState)
+        val products = gridProduct.products
+        products.forEach {
+            val viewState = GridProductViewState(it.id, it.name, it.price, it.imageUrl)
+            viewStates.add(viewState)
+        }
     }
 
     override fun visit(adBlock: AdBlock) {
