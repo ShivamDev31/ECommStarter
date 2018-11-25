@@ -10,8 +10,9 @@ import io.kotlin.ecommstarter.home.holder.ProductListViewHolder
 import io.kotlin.ecommstarter.home.holder.ProductSliderViewHolder
 import io.kotlin.ecommstarter.home.viewstate.HomeViewState
 import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.*
+import io.kotlin.ecommstarter.imageloader.ImageLoader
 
-class HomeAdapter(private val inflater: LayoutInflater) : RecyclerView.Adapter<HomeViewHolder>() {
+class HomeAdapter(private val inflater: LayoutInflater, private val imageLoader: ImageLoader) : RecyclerView.Adapter<HomeViewHolder>() {
 
     private val viewStates = mutableListOf<HomeViewState>()
 
@@ -19,7 +20,7 @@ class HomeAdapter(private val inflater: LayoutInflater) : RecyclerView.Adapter<H
         val type = HomeViewState.Type.from(viewType)
         return when (type) {
             SLIDER_PRODUCT -> ProductSliderViewHolder(inflater, parent)
-            LIST_PRODUCT -> ProductListViewHolder(inflater, parent)
+            LIST_PRODUCT -> ProductListViewHolder(inflater, parent, imageLoader)
             GRID_PRODUCT -> ProductGridViewHolder(inflater, parent)
             AD_BLOCK -> AdBlockViewHolder(inflater, parent)
         }
