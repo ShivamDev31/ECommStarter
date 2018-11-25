@@ -18,7 +18,7 @@ ext {
                     rules   : '0.5'
             ],
             retrofit           : '2.4.0',
-            dagger             : '2.17',
+            dagger             : '2.16',
             okHttp             : '3.11.0',
             playService        : '16.0.0',
             robolectric        : '3.8',
