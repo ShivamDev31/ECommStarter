@@ -2,6 +2,7 @@ package io.kotlin.ecommstarter.home.holder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import io.kotlin.ecommstarter.exts.toast
 import io.kotlin.ecommstarter.home.viewstate.HomeViewState
 import io.kotlin.ecommstarter.home.viewstate.ProductListViewState
 import io.kotlin.ecommstarter.imageloader.ImageLoader
@@ -15,5 +16,8 @@ class ProductListViewHolder(inflater: LayoutInflater, parent: ViewGroup, private
         imageLoader.load(product.imageUrl).into(itemView.ivProductImage)
         itemView.tvProductName.text = product.name
         itemView.tvProductPrice.text = "${product.price}"
+        itemView.setOnClickListener {
+            it.context.toast("Product clicked ${product.id}")
+        }
     }
 }
