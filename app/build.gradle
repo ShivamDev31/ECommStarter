@@ -25,6 +25,10 @@ buildProperties {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion versions.androidSdk.compile
 
