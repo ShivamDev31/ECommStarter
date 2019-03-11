@@ -8,21 +8,29 @@ import io.kotlin.ecommstarter.home.holder.HomeViewHolder
 import io.kotlin.ecommstarter.home.holder.ProductGridViewHolder
 import io.kotlin.ecommstarter.home.holder.ProductListViewHolder
 import io.kotlin.ecommstarter.home.holder.ProductSliderViewHolder
+import io.kotlin.ecommstarter.home.viewstate.AdBlockViewState
+import io.kotlin.ecommstarter.home.viewstate.GridProductViewState
 import io.kotlin.ecommstarter.home.viewstate.HomeViewState
-import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.*
+import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.AD_BLOCK
+import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.GRID_PRODUCT
+import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.LIST_PRODUCT
+import io.kotlin.ecommstarter.home.viewstate.HomeViewState.Type.SLIDER_PRODUCT
+import io.kotlin.ecommstarter.home.viewstate.ProductListViewState
+import io.kotlin.ecommstarter.home.viewstate.ProductSliderViewState
 import io.kotlin.ecommstarter.imageloader.ImageLoader
 
-class HomeAdapter(private val inflater: LayoutInflater, private val imageLoader: ImageLoader) : RecyclerView.Adapter<HomeViewHolder>() {
+class HomeAdapter(private val inflater: LayoutInflater, private val imageLoader: ImageLoader, private val sliderAdapter: ProductsSliderAdapter)
+    : RecyclerView.Adapter<HomeViewHolder>() {
 
     private val viewStates = mutableListOf<HomeViewState>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val type = HomeViewState.Type.from(viewType)
         return when (type) {
-            SLIDER_PRODUCT -> ProductSliderViewHolder(inflater, parent)
+            SLIDER_PRODUCT -> ProductSliderViewHolder(inflater, parent, imageLoader, sliderAdapter)
             LIST_PRODUCT -> ProductListViewHolder(inflater, parent, imageLoader)
-            GRID_PRODUCT -> ProductGridViewHolder(inflater, parent)
-            AD_BLOCK -> AdBlockViewHolder(inflater, parent)
+            GRID_PRODUCT -> ProductGridViewHolder(inflater, parent, imageLoader)
+            AD_BLOCK -> AdBlockViewHolder(inflater, parent, imageLoader)
         }
     }
 

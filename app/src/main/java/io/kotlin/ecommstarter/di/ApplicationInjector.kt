@@ -12,7 +12,8 @@ import javax.inject.Singleton
     ApplicationModule::class,
     AndroidInjectionModule::class,
     AndroidSupportInjectionModule::class,
-    ActivityBindingModule::class])
+    ActivityBindingModule::class,
+    FragmentBindingModule::class])
 interface ApplicationInjector {
 
     fun inject(injectableApp: InjectableApp)
