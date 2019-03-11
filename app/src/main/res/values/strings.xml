@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">ECommStarter</string>
+  <string name="rupee_symbol">\u20B9 %s</string>
 </resources>
