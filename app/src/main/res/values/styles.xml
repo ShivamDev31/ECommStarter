@@ -8,4 +8,15 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="Home" />
+
+  <style name="Home.Item">
+    <item name="android:background">@drawable/home_item_background</item>
+    <item name="android:paddingLeft">@dimen/home_item_padding_horizontal</item>
+    <item name="android:paddingStart">@dimen/home_item_padding_horizontal</item>
+    <item name="android:paddingTop">@dimen/home_item_padding_vertical</item>
+    <item name="android:paddingBottom">@dimen/home_item_padding_vertical</item>
+    <item name="android:paddingRight">@dimen/home_item_padding_horizontal</item>
+    <item name="android:paddingEnd">@dimen/home_item_padding_horizontal</item>
+  </style>
 </resources>
