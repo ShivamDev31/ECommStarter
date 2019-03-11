@@ -6,7 +6,7 @@ import io.kotlin.ecommstarter.R
 interface HomeViewState {
 
     enum class Type constructor(@LayoutRes val layoutId: Int) {
-        SLIDER_PRODUCT(R.layout.item_product_slider),
+        SLIDER_PRODUCT(R.layout.fragment_products_slider),
         LIST_PRODUCT(R.layout.item_product_list),
         GRID_PRODUCT(R.layout.item_product_grid),
         AD_BLOCK(R.layout.item_ad_block);
