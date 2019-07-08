@@ -10,7 +10,7 @@ class JsonModule {
 
     @Singleton
     @Provides
-    fun mosho(): Moshi {
+    fun moshi(): Moshi {
         return JsonDefaults.moshi()
     }
 

@@ -1,0 +1,85 @@
+apply plugin: 'com.novoda.static-analysis'
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
+def sourceSets = project.sourceSets ?: project.android.sourceSets
+def testSourceSet = sourceSets.test.java.srcDirs
+def androidTestSourceSet = sourceSets.hasProperty('androidTest') ? sourceSets.androidTest.java.srcDirs : project.files()
+def onlyDevDebugVariant = { variant -> (variant.name == 'devDebug') }
+def apiObjects = project.fileTree(project.projectDir).include('**/Api*.java')
+def daggerModules = project.fileTree(project.projectDir).include('**/*Module.java')
+
+staticAnalysis {
+    penalty {
+        maxErrors = 0
+        maxWarnings = 0
+    }
+    checkstyle {
+        configFile rootProject.file('resources/analysis/checkstyle-rules/checkstyle.xml')
+        toolVersion = '7.5.1'
+        exclude testSourceSet
+        exclude androidTestSourceSet
+        exclude apiObjects
+        exclude daggerModules
+        includeVariants onlyDevDebugVariant
+    }
+    pmd {
+        ruleSetFiles = rootProject.files("resources/analysis/pmd-rules/pmd-rules.xml")
+        toolVersion = '5.5.3'
+        exclude testSourceSet
+        exclude androidTestSourceSet
+        exclude apiObjects
+        exclude daggerModules
+        includeVariants onlyDevDebugVariant
+    }
+    findbugs {
+        excludeFilter = rootProject.file("resources/analysis/findbugs-rules/findbugs-excludes.xml")
+        toolVersion = '3.0.1'
+        exclude testSourceSet
+        exclude androidTestSourceSet
+        includeVariants onlyDevDebugVariant
+    }
+    detekt {
+        version '1.0.0.RC8'
+        defaultProfile {
+            config = rootProject.file('resources/analysis/detekt-rules/detekt-rules.yml')
+            filters = '.*test.*,.*/resources/.*,.*/tmp/.*'
+            input = "$projectDir/src/main/java"
+            output = "$projectDir/build/reports/detekt"
+        }
+    }
+}
+
+
+apply plugin: 'jacoco'
+
+def includes = ['com/newsuk/**']
+def excludes = ['**/**AutoValue**', '**/**Module**', '**/**Injector**']
+
+plugins.withId('java') {
+    project.tasks.withType(JacocoReport) { reportTask ->
+        reportTask.reports {
+            xml.enabled true
+            csv.enabled true
+            html.enabled true
+            html.destination new File(buildDir, 'reports/jacoco/test')
+        }
+        afterEvaluate {
+            reportTask.classDirectories = project.files(reportTask.allClassDirs.files.collect {
+                fileTree(dir: it, include: includes, exclude: excludes)
+            })
+            reportTask.additionalClassDirs = project.files()
+        }
+    }
+}
+
+plugins.withId('com.android.application') {
+    android {
+        testOptions {
+            unitTests.all {
+                jacoco {
+                    includeNoLocationClasses = true
+                }
+            }
+        }
+    }
+}
