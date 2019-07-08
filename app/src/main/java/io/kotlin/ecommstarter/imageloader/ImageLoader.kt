@@ -11,7 +11,7 @@ interface ImageLoader {
 
     fun load(uri: HttpUrl): RequestBuilder
 
-    fun load(url: String): RequestBuilder
+    fun load(url: String?): RequestBuilder
 
     fun clear(imageView: ImageView)
 

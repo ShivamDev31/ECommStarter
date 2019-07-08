@@ -7,9 +7,9 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 
 private const val AD_TYPE = "ad"
-private const val SLIDER_PRODUCTS_TYPE = "slider_products"
-private const val LIST_PRODUCTS_TYPE = "list_products"
-private const val GRID_PRODUCTS_TYPE = "grid_products"
+private const val SLIDER_PRODUCTS_TYPE = "product_slider"
+private const val LIST_PRODUCTS_TYPE = "product_list"
+private const val GRID_PRODUCTS_TYPE = "product_grid"
 
 class ApiBlockJsonAdapter(moshi: Moshi) : JsonAdapter<ApiBlock>() {
 

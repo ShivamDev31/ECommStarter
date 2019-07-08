@@ -9,7 +9,11 @@ interface Block {
 
     interface Visitor {
 
-        fun visit(product: Product)
+        fun visit(sliderProduct: SliderProductBlock)
+
+        fun visit(listProduct: ListProductBlock)
+
+        fun visit(gridProduct: GridProductBlock)
 
         fun visit(adBlock: AdBlock)
     }

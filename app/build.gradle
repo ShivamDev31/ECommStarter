@@ -25,6 +25,10 @@ buildProperties {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion versions.androidSdk.compile
 
@@ -72,6 +76,9 @@ dependencies {
     kapt libraries.app.dagger.android.processor
     kapt libraries.app.glideProcessor
 
+    implementation libraries.androidx.appCompat
+    implementation libraries.androidx.supportLegacy
+    implementation libraries.androidx.recyclerView
     implementation libraries.app.dagger.runtime
     implementation libraries.app.dagger.android.runtime
     implementation libraries.app.dagger.android.support

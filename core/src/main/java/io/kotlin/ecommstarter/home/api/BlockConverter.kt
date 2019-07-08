@@ -11,6 +11,7 @@ import io.kotlin.ecommstarter.rx.Converter
 import javax.activation.UnsupportedDataTypeException
 
 class BlockConverter : Converter<ApiHomeBlock?, HomeBlock>, ApiBlock.Visitor {
+
     override fun apply(apiHomeBlock: ApiHomeBlock): HomeBlock {
         val blocks = mutableListOf<Block>()
         apiHomeBlock.blocks.forEach {
@@ -22,16 +23,16 @@ class BlockConverter : Converter<ApiHomeBlock?, HomeBlock>, ApiBlock.Visitor {
 
     override fun visit(apiProductBlock: ApiProductBlock): Block {
         val type = apiProductBlock.type
+        val products = mutableListOf<Product>()
         apiProductBlock.products?.forEach {
             val product = Product(it.id, it.name, it.price, it.imageUrl)
-            return when (type) {
-                "product_slider" -> SliderProductBlock(product)
-                "product_list" -> ListProductBlock(product)
-                else -> GridProductBlock(product)
-            }
+            products.add(product)
         }
-
-        throw UnsupportedDataTypeException("Unsupported product type not being handled in the app")
+        return when (type) {
+            "product_slider" -> SliderProductBlock(products)
+            "product_list" -> ListProductBlock(products)
+            else -> GridProductBlock(products)
+        }
     }
 
     override fun visit(apiAdBlock: ApiAdBlock): Block {
